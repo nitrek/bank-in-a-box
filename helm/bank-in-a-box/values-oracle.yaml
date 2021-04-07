@@ -14,7 +14,7 @@ setup:
   # cloudProvider defines what provider the deployment should be targeting, a lot of options are provider specific. Use 'local' for doing local deployments.
   # Accepted options: 'azure', 'aws', 'gcp', 'local'
   # Please also configure the storage options to match your intended cloud provider solution (for example if using gcp as cloud provider, disable azureFile and enable gcpPD storage)
-  cloudProvider: "local"
+  cloudProvider: "gcp"
 
 # config defines the options that relate to the deployment but not specifically to the Corda Node
 config:
