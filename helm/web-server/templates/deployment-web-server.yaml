@@ -31,7 +31,7 @@ spec:
        containers:
        - name: {{ .Values.config.resourceName }}
          image: {{ .Values.config.dockerImage }}
-         imagePullPolicy: Never
+         imagePullPolicy: IfNotPresent
          resources:
            requests:
              memory: "1Gi"
