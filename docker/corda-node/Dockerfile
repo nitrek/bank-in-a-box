@@ -14,9 +14,9 @@ ADD --chown=corda:corda https://software.r3.com/artifactory/corda-lib/com/r3/cor
 ADD --chown=corda:corda https://software.r3.com/artifactory/corda-lib/com/r3/corda/lib/accounts/accounts-workflows/1.0/accounts-workflows-1.0.jar /opt/corda/cordapps/accounts-workflows-1.0.jar
 
 ## CorDapp JAR's
-ADD --chown=corda:corda gs://ownera-tokenization/bank-in-a-box-workflows-0.1.jar /opt/corda/cordapps/bank-in-a-box-workflows-0.1.jar
-ADD --chown=corda:corda gs://ownera-tokenization/bank-in-a-box-contracts-0.1.jar /opt/corda/cordapps/bank-in-a-box-contracts-0.1.jar
-ADD --chown=corda:corda gs://ownera-tokenization/credit-rating-oracle-0.1.jar /opt/corda/cordapps/credit-rating-oracle-0.1.jar
+ADD --chown=corda:corda https://storage.cloud.google.com/ownera-tokenization/bank-in-a-box-workflows-0.1.jar /opt/corda/cordapps/bank-in-a-box-workflows-0.1.jar
+ADD --chown=corda:corda https://storage.cloud.google.com/ownera-tokenization/bank-in-a-box-contracts-0.1.jar /opt/corda/cordapps/bank-in-a-box-contracts-0.1.jar
+ADD --chown=corda:corda https://storage.cloud.google.com/ownera-tokenization/credit-rating-oracle-0.1.jar /opt/corda/cordapps/credit-rating-oracle-0.1.jar
 
 USER "corda"
 
