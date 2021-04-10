@@ -30,7 +30,7 @@ config:
     # resourceName defines the Kubernetes resource Name to use for this resource
     # Does not need editing unless deploying multiple nodes in the same cluster which should use unique resource names
     resourceName: "storage-1"
-    storageClassName: "gcpPD"
+    storageClassName: "local-storage"
     # local defines the local storage options, only used if it is enabled
     local:
       # enabled is a boolean value for the above parameter
