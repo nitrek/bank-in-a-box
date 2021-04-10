@@ -66,6 +66,11 @@ spec:
        containers:
        - name: {{ .Values.config.resourceName }}
          image: {{ .Values.config.dockerImage }}
+         imagePullPolicy: IfNotPresent
+         resources:
+           requests:
+             memory: "2Gi"
+             cpu: "2000m"
          ports:
          - containerPort: {{ .Values.corda.node.conf.p2pPort }}
          - containerPort: {{ .Values.corda.node.conf.rpc.port }}
@@ -117,22 +122,3 @@ spec:
            name: node-config-volume
            subPath: truststore.jks
            readOnly: true
-apiVersion: "autoscaling/v2beta1"
-kind: "HorizontalPodAutoscaler"
-metadata:
-  name: "{{ .Values.config.resourceName }}-deployment-auto-scaller"
-  namespace: "default"
-  labels:
-    app: "{{ .Values.config.resourceName }}-node"
-spec:
-  scaleTargetRef:
-    kind: "Deployment"
-    name: "{{ .Values.config.resourceName }}-deployment"
-    apiVersion: "apps/v1"
-  minReplicas: 1
-  maxReplicas: 5
-  metrics:
-  - type: "Resource"
-    resource:
-      name: "cpu"
-      targetAverageUtilization: 80
