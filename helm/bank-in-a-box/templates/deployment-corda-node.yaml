@@ -67,6 +67,13 @@ spec:
        - name: {{ .Values.config.resourceName }}
          image: {{ .Values.config.dockerImage }}
          imagePullPolicy: IfNotPresent
+         resources:
+           requests:
+             memory: "2Gi"
+             cpu: "2000m"
+           limits:
+             memory: "3Gi"
+             cpu: "4000m"
          ports:
          - containerPort: {{ .Values.corda.node.conf.p2pPort }}
          - containerPort: {{ .Values.corda.node.conf.rpc.port }}
