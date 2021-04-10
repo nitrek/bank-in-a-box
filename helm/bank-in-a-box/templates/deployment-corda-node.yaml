@@ -69,11 +69,8 @@ spec:
          imagePullPolicy: IfNotPresent
          resources:
            requests:
-             memory: "1Gi"
-             cpu: "500m"
-           limits:
-             memory: "2Gi"
-             cpu: "1000m"
+              name: "cpu"
+              targetAverageUtilization: 80
          ports:
          - containerPort: {{ .Values.corda.node.conf.p2pPort }}
          - containerPort: {{ .Values.corda.node.conf.rpc.port }}
