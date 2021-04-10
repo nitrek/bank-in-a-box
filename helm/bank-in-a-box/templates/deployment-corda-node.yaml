@@ -67,10 +67,6 @@ spec:
        - name: {{ .Values.config.resourceName }}
          image: {{ .Values.config.dockerImage }}
          imagePullPolicy: IfNotPresent
-         resources:
-           requests:
-              name: "cpu"
-              targetAverageUtilization: 80
          ports:
          - containerPort: {{ .Values.corda.node.conf.p2pPort }}
          - containerPort: {{ .Values.corda.node.conf.rpc.port }}
